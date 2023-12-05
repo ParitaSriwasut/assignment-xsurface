@@ -4,7 +4,6 @@ export const config = {
   cloudinary: {
     cloudName: process.env.CLOUDINARY_NAME || "dswx4saup",
     apiKey: process.env.CLOUDINARY_API_KEY || "129462427991493",
-    apiSecret:
-      process.env.CLOUDINARY_API_SECRET || "e5Ksoyc2m4c67hFSDCKIQKsBDFo",
+    apiSecret: process.env.CLOUDINARY_API_SECRET || "e5Ksoyc2m4c67hFSDCKIQKsBDFo",
   },
 };
