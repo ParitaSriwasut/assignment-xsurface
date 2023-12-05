@@ -1,10 +1,10 @@
-import "./App.css";
+import Router from "./router/Router";
 
 function App() {
   return (
-    <>
-      <h1>Website Assigment</h1>
-    </>
+    <div>
+      <Router />
+    </div>
   );
 }
 

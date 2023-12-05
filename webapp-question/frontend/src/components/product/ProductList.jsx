@@ -1,65 +1,51 @@
-export default function ProductList() {
+/* eslint-disable react/prop-types */
+import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
+
+export default function ProductList({ products }) {
   return (
     <>
       <section className="section flex flex-col gap-12 pb-20 desktop:pt-16">
-        <div className="container flex justify-center gap-8 pt-10">
-          <div className="text-2xl text-gray-800 gap-4 items-start">
-            Product List
-          </div>
-          <form>
-            <label
-              htmlFor="default-search"
-              className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-            >
-              Search
-            </label>
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
-              <input
-                type="search"
-                id="default-search"
-                className="block w-full p-4 pl-10 text-sm text-gray-500 border border-red-500 rounded-xl bg-white focus:ring-red-500 focus:border-red-500 md:w-80"
-                placeholder="Name, Catalogue, Code"
-                required
-              />
-              <button
-                type="submit"
-                className="text-white absolute right-2.5 bottom-2.5 bg-red-700 hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-xl text-sm px-4 py-2 "
-              >
-                Search
-              </button>
-            </div>
-          </form>
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
-            <a href="#">
-              <img
-                className="rounded-t-lg"
-                src="/docs/images/blog/image-1.jpg"
-                alt=""
-              />
-            </a>
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                Product name
-              </h5>
-              <p className="mb-3 text-sm text-gray-700 ">Code</p>
-              <p className="mb-3 text-lg text-red-700 ">B</p>
+        <div className="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-primary-50 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+          <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+            <h2 className="flex justify-center text-secondary-500 text-stone text-4xl font-semibold py-10">
+              Product list
+            </h2>
+            <SearchInput />
+            <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 cursor-pointer">
+              {products.map((product) => (
+                <div key={product.id}>
+                  <Link to={`/products/${product.id}`}>
+                    <a key={product.id} href={product.href} className="group">
+                      <div className="h-48 w-full object-cover object-center aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                        <img
+                          src={product.image}
+                          alt={product.productName}
+                          className="h-full w-full object-cover object-center group-hover:opacity-75"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="mt-4 text-sm text-secondary-5000">
+                          {product.productName}
+                        </h3>
+                        <p className="mt-1 text-lg font-medium text-secondary-500">
+                          {product.productCode}
+                        </p>
+                        <p className="mt-1 text-lg font-medium text-secondary-500">
+                          ฿{product.productPrice}
+                        </p>
+                      </div>
+                    </a>
+                  </Link>
+                  <div className="mt-4">
+                    <Link to={`/product/${product.id}`}>
+                      <button className="bg-primary-400 text-primary-50 py-2 px-6 rounded-full">
+                        <i style={{ color: "#78716c" }}></i> Product details
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
