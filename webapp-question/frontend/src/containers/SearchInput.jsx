@@ -1,37 +1,54 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchInput from "../components/product/SearchInput";
 
-export default function searchBar() {
+export default function SearchBar() {
   const [products, setProducts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // fetch the product
   useEffect(() => {
     async function fetchProducts() {
-      const response = await axios.get("/products");
-      if (!response.status === 200) {
-        throw new Error("Network response was not 200");
-      }
+      try {
+        const response = await fetch("/products");
+        if (!response.status === 200) {
+          throw new Error("Network response was not 200");
+        }
 
-      const data = response.data;
-      setLoading(false);
-      setProducts(data.orders);
+        const data = await response.json();
+        setProducts(data.products);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching products:", error.message);
+      }
     }
 
     fetchProducts();
   }, []);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const searchTerm = e.target.value;
     setSearchInput(searchTerm);
 
-    const filteredProductItems = products.filter((product) =>
-      product.ProductName.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredProducts(filteredProductItems);
+    try {
+      const response = await fetch(
+        `/search?name=${searchTerm} && /search?code=${searchTerm}`
+      );
+      if (!response.status === 200) {
+        throw new Error("Network response was not 200");
+      }
+
+      const searchData = await response.json();
+      setFilteredProducts(searchData.products);
+    } catch (error) {
+      console.error("Error searching for products:", error.message);
+    }
   };
-  return SearchInput({ handleInputChange, filteredProductItems });
+
+  return (
+    <SearchInput
+      handleInputChange={handleInputChange}
+      filteredProducts={filteredProducts}
+    />
+  );
 }

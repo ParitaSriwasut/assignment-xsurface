@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "../configs/axios";
 import ProductList from "../components/product/ProductList";
-import Loading from "../components/Loading";
 
 export function ProductListContainer() {
   const [products, setProducts] = useState([]);
@@ -9,22 +7,27 @@ export function ProductListContainer() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await axios.get("/product");
-      if (!response.status === 200) {
-        throw new Error("Network response was not 200");
-      }
+      try {
+        const response = await fetch("http://localhost:4000/api/products");
 
-      const data = response.data;
-      setLoading(false);
-      setProducts(data.products);
+        if (!response.status === 200) {
+          throw new Error("Network response was not 200");
+        }
+
+        const data = await response.json();
+        setLoading(false);
+        setProducts(data.products);
+      } catch (error) {
+        console.error("Error fetching products:", error.message);
+      }
     }
 
     fetchProducts();
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <div>Loading...</div>;
   }
 
-  return ProductList({ products });
+  return <ProductList products={products} />;
 }

@@ -1,28 +1,35 @@
-/* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import ProductDetail from "./ProductDetail";
+import { useState, useEffect } from "react";
+import ProductDetail from "../components/product/ProductDetail";
 
-export function ProductDetailContainer() {
-  const { id } = useParams();
-  const [product, setProduct] = useState([]);
+export function ProductDetailContainer({ name, code }) {
+  const [productDetail, setProductDetail] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchProduct() {
-      const response = await axios.get("/product/" + id);
-      if (!response.status === 200) {
-        throw new Error("Network response was not 200");
-      }
+    async function fetchProductDetails() {
+      try {
+        const response = await fetch(
+          `http://localhost:4000/api/products/${name}/${code}`
+        );
 
-      const data = response.data;
-      setLoading(false);
-      setProduct(data.product);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        setLoading(false);
+        setProductDetail(data.product);
+      } catch (error) {
+        console.error("Error fetching product details:", error.message);
+      }
     }
 
-    fetchProduct();
-  }, [id]);
+    fetchProductDetails();
+  }, [name, code]);
 
-  return <ProductDetail product={product} />;
+  if (loading) {
+    return <div>Loading product details...</div>;
+  }
+
+  return <ProductDetail details={productDetail} />;
 }
