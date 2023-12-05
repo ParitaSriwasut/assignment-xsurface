@@ -1,5 +1,5 @@
 export const config = {
-  mondbUri: process.env.MONGODB_URL || "mongodb://localhost:27017/mydb",
+  mondbUri: process.env.MONGODB_URI || "mongodb://localhost:27017/mydb",
   port: process.env.PORT || 3000,
   cloudinary: {
     cloudName: process.env.CLOUDINARY_NAME || "dswx4saup",

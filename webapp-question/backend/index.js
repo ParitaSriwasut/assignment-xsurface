@@ -24,6 +24,8 @@ app.listen(config.port, () => {
   console.log(`Server running at http://localhost:${config.port}`);
 });
 
+export default app;
+
 process.on('SIGINT', async () => {
   await connection.close();
   process.exit(0);

@@ -1,4 +1,5 @@
 export const errMiddleware =  (err, req, res, next) => {
+    console.log(`Error happened: ${err}`);
     if (err.name === "ValidationError") {
       err.statusCode = 400;
     }

@@ -26,9 +26,5 @@ export default {
       },
     },
   },
-  screens: {
-    mobile: "640px",
-    desktop: "1024px",
-  },
   plugins: [],
 };

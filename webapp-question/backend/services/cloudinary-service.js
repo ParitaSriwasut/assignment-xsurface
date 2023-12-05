@@ -1,7 +1,7 @@
 import { v2 as cloudinary } from "cloudinary";
 import { config } from "../config/config.js";
 
-const service = cloudinary.config({
+cloudinary.config({
   cloud_name: config.cloudinary.cloudName,
   api_key: config.cloudinary.apiKey,
   api_secret: config.cloudinary.apiSecret,
@@ -9,6 +9,6 @@ const service = cloudinary.config({
 });
 
 export async function cloudinaryUpload(path) {
-  const result = service.uploader.upload(path);
+  const result = cloudinary.uploader.upload(path);
   return (await result).secure_url;
 }
