@@ -12,10 +12,10 @@ export default function ProductList({ products }) {
           {products.map((product) => (
             <div
               key={product.id}
-              className="w-70 bg-white overflow-hidden shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl mx-2 my-4" // Added mx-2 and my-4 for margin
+              className="w-74 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl mx-2 my-4" // Added mx-2 and my-4 for margin
             >
               <img
-                className="h-full w-full object-cover rounded-t-xl"
+                className="h-70 w-74 object-cover rounded-t-xl"
                 src={product.image}
                 alt={product.name}
               />
