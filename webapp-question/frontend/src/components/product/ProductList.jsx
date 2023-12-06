@@ -12,10 +12,10 @@ export default function ProductList({ products }) {
           {products.map((product) => (
             <div
               key={product.id}
-              className="w-70 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl mx-2 my-4" // Added mx-2 and my-4 for margin
+              className="w-70 bg-white overflow-hidden shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl mx-2 my-4" // Added mx-2 and my-4 for margin
             >
               <img
-                className="h-72 w-80 object-cover rounded-t-xl"
+                className="h-full w-full object-cover rounded-t-xl"
                 src={product.image}
                 alt={product.name}
               />
@@ -29,7 +29,7 @@ export default function ProductList({ products }) {
                 <p className="text-primary-700 text-lg font-semibold cursor-auto my-3">
                   ฿ {product.price}
                 </p>
-                <div className="mr-auto">
+                <div className="ml-auto">
                   <FaCircleInfo
                     className="flex text-2xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105"
                     onClick={() => {
