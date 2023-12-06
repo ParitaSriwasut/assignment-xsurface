@@ -15,7 +15,7 @@ export default function ProductList({ products }) {
               className="w-72 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl mx-2 my-4" // Added mx-2 and my-4 for margin
             >
               <img
-                className="h-70 w-64 object-cover rounded-t-xl"
+                className="h-80 w-72 object-cover rounded-t-xl"
                 src={product.image}
                 alt={product.name}
               />
