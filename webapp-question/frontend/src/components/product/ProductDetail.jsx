@@ -7,7 +7,7 @@ export default function ProductDetail({ product }) {
     return (
       <Modal onClose={() => setIsOpen(false)}>
         <div className="mx-auto mt-20 inset-0 z-60">
-          {/* map product details  key={el.id} */}
+          {/* map product details  key={product.id} */}
         </div>
         <div className="bg-white p-4 rounded-lg shadow-xl gap-10">
           <div className="flex flex-row justify-center items-center gap-20">
@@ -16,25 +16,25 @@ export default function ProductDetail({ product }) {
                 Product image
               </p>
               <img
-                src={}
+                src={product.image}
                 alt="Product image"
                 className="w-[200px] h-[2o0px] border border-primary-200"
               />
             </div>
           </div>
           <div className="flex flex-col items-center justify-center mt-6">
-            <p className="text-3xl font-extrabold text-gray-600">
-              Restaurant name : {el.name}
+            <p className="text-3xl font-extrabold text-secondary-400">
+              Product name : {product.name}
             </p>
           </div>
           <div className="flex flex-col items-center justify-center mt-6">
-            <p className="text-3xl font-extrabold text-gray-600">
-              Restaurant name : {el.code}
+            <p className="text-3xl font-extrabold text-secondary-400">
+              Product code : {product.code}
             </p>
           </div>
           <div className="flex flex-col items-center justify-center mt-6">
-            <p className="text-3xl font-extrabold text-gray-600">
-              Restaurant name : {el.price}
+            <p className="text-3xl font-extrabold text-secondary-400">
+              Product price : {product.price}
             </p>
           </div>
         </div>

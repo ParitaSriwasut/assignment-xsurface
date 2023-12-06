@@ -26,11 +26,8 @@ export default function ProductList({ products }) {
                 <p className="text-secondary-400 text-md font-semibold cursor-auto ml-2">
                   {product.code}
                 </p>
-                <div className="ml-auto flex p-10">
+                <div className="ml-32">
                   <FaCircleInfo className="flex text-xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105" />
-                  <p className="flex text-xsb font-bold text-secondary-400 ">
-                    more info
-                  </p>
                 </div>
               </div>
             </div>
