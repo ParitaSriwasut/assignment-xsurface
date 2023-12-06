@@ -98,7 +98,7 @@ export default function ProductList({ products }) {
                 <p className="text-secondary-400 text-md font-semibold cursor-auto my-3">
                   {product.code}
                 </p>
-                <p className="text-primary-700 text-lg font-semibold cursor-auto my-3">
+                <p className="text-primary-600 text-lg font-semibold cursor-auto my-3">
                   ฿ {product.price}
                 </p>
               </div>
@@ -118,7 +118,7 @@ export default function ProductList({ products }) {
                   <div className="flex flex-row justify-center items-center gap-20">
                     <div className="items-center">
                       <p className="flex justify-center text-center text-lg text-secondary-400 font-semibold">
-                        Product image
+                        Product image :
                       </p>
                       <img
                         src={selectedProduct?.image}

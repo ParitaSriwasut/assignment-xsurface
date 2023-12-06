@@ -21,6 +21,12 @@ export default function CreateProduct({
           onSubmit={handleSubmitForm}
           className="items-center justify-center w-full max-auto pt-6 p-44"
         >
+          <label
+            htmlFor="text"
+            className=" md:text-sm text-sm text-secondary-400 text-light font-semibold"
+          >
+            Upload Product
+          </label>
           <div className="pt-2">
             <label className="flex flex-col border-4 border-dashed w-full-[600px] h-60 rounded-lg hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center group">
               <div className="flex flex-col justify-center items-center px-20">
@@ -63,9 +69,9 @@ export default function CreateProduct({
           <div className="grid grid-cols-1 mt-4 mx-2">
             <label
               htmlFor="productName"
-              className=" md:text-sm text-xs text-secondary-400 text-light font-semibold"
+              className=" md:text-sm text-sm text-secondary-400 text-light font-semibold"
             >
-              Product name:
+              Product name
             </label>
             <input
               type="text"
@@ -79,9 +85,9 @@ export default function CreateProduct({
           <div className="grid grid-cols-1 mt-4 mx-2">
             <label
               htmlFor="productCode"
-              className=" md:text-sm text-xs text-secondary-400 text-light font-semibold"
+              className=" md:text-sm text-sm text-secondary-400 text-light font-semibold"
             >
-              Code:
+              Code
             </label>
             <input
               type="text"
@@ -96,9 +102,9 @@ export default function CreateProduct({
           <div className="grid grid-cols-1 mt-4 mx-2">
             <label
               htmlFor="productPrice"
-              className=" md:text-sm text-xs text-secondary-400 text-light font-semibold"
+              className=" md:text-sm text-sm text-secondary-400 text-light font-semibold"
             >
-              Product price:
+              Product price
             </label>
             <input
               type="number"
