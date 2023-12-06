@@ -22,40 +22,38 @@ export default function CreateProduct({
           className="items-center justify-center w-full max-auto pt-6 p-44"
         >
           <div className="pt-2">
-            <label className="mb-4 block text-lg font-semibold text-secondary-400 text-light">
-              Upload image:
-            </label>
-            <div className="mb-8">
+            <label className="flex flex-col border-4 border-dashed w-full-[600px] h-60 rounded-lg hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center group">
+              <div className="flex flex-col justify-center items-center px-20">
+                {previewSrc ? (
+                  <img src={previewSrc} alt="Preview" className="max-h-32" />
+                ) : (
+                  <>
+                    <LuUpload className="flex items-center justify-center text-2xl font-bold text-secondary-400" />
+                    <div className="flex">
+                      <p className="mb-2 block text-sm font-semibold text-secondary-300">
+                        Drag & Drop or
+                      </p>
+                      <p className="mb-2 block text-sm font-semibold text-secondary-600 underline">
+                        Choose file
+                      </p>
+                      <p className="mb-2 block text-sm font-semibold text-secondary-300">
+                        to upload
+                      </p>
+                    </div>
+                    <p className="mb-2 block text-xs font-semibold text-secondary-300">
+                      JPG. or PNG Maximum file size 50MB.
+                    </p>
+                  </>
+                )}
+              </div>
               <input
                 type="file"
-                className="opacity-50 absolute pt-28"
+                className="opacity-0 absolute"
                 onChange={handleFileChange}
                 accept="image/*" // Optionally ensure only image file types are selectable
               />
-              <label
-                htmlFor="file"
-                className="relative flex w-full items-center justify-center rounded-lg border-dashed border-2 hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center"
-              >
-                <div>
-                  <div className="flex items-center justify-center gap-20">
-                    <LuUpload className="flex items-center justify-center text-2xl font-bold text-secondary-400" />
-                  </div>
-                  <div className="flex">
-                    <p className="mb-2 block text-sm font-semibold text-secondary-300">
-                      Drag & Drop or
-                    </p>
-                    <p className="mb-2 block text-sm font-semibold text-secondary-600 underline">
-                      Choose file
-                    </p>
-                    <p className="mb-2 block text-sm font-semibold text-secondary-300">
-                      to upload
-                    </p>
-                  </div>
-                  <p className="mb-2 block text-xs font-semibold text-secondary-300">
-                    JPG. or PNG Maximum file size 50MB.
-                  </p>
-                </div>
-              </label>
+            </label>
+            <div className="mb-8">
               <span className="items-start text-xs text-secondary-300 text-right">
                 Image upload (0/6)
               </span>
@@ -112,12 +110,12 @@ export default function CreateProduct({
           </div>
 
           <div className="flex gap-10 flex-col w-full sm:w-auto sm:flex-row p-4 justify-center items-center pt-10">
-            <button className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-white text-primary-600 border-2 border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-400 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1">
+            <button className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-white text-primary-600 border border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-400 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1">
               Cancel
             </button>
             <button
               type="submit"
-              className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-primary-400 text-white border-2 border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1"
+              className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-primary-400 text-white border border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1"
             >
               Confirm
             </button>
