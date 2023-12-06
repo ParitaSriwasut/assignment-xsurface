@@ -1,7 +1,10 @@
 export default function Loading() {
   return (
-    <div className="flex h-screen items-center justify-center bg-white">
-      <div className="h-16 w-16 animate-spin rounded-full border-4 border-solid border-red-700 border-t-transparent"></div>
+    <div className="flex space-x-2 justify-center items-center bg-white h-screen dark:invert">
+      <span className="sr-only">Loading...</span>
+      <div className="h-8 w-8 bg-secondary-500 rounded-full animate-bounce delay-[animation-delay:-0.3s]"></div>
+      <div className="h-8 w-8 bg-secondary-500 rounded-full animate-bounce delay-[animation-delay:-0.15s]"></div>
+      <div className="h-8 w-8 bg-secondary-500 rounded-full animate-bounce"></div>
     </div>
   );
 }

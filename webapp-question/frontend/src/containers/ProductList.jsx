@@ -3,6 +3,7 @@ import ProductList from "../components/product/ProductList";
 import { config } from "../configs/config";
 import axios from "axios";
 import SearchInput from "../components/product/SearchInput";
+import Loading from "../components/Loading";
 
 export function ProductListContainer() {
   const [products, setProducts] = useState([]);
@@ -12,7 +13,9 @@ export function ProductListContainer() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await axios.get(`${config.backendUrl}/products?name=${searchInput}`);
+        const response = await axios.get(
+          `${config.backendUrl}/products?name=${searchInput}`
+        );
         if (!response.status === 200) {
           throw new Error("Network response was not 200");
         }
@@ -32,10 +35,16 @@ export function ProductListContainer() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
-    <><SearchInput handleSearchInputChange={handleSearchInputChange} searchInput={searchInput} /><ProductList products={products} /></>
+    <>
+      <SearchInput
+        handleSearchInputChange={handleSearchInputChange}
+        searchInput={searchInput}
+      />
+      <ProductList products={products} />
+    </>
   );
 }
