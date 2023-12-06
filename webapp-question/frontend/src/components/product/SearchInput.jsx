@@ -6,7 +6,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
       <div className="items-center justify-center pt-6 pl-12">
         <div className="relative">
           <input
-            className="appearance-none border-2 border-secondary-400 hover:border-secondary-200 transition-colors rounded-2xl w-[900px] py-2 px-12 text-secondary-500 leading-tight focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:shadow-outline"
+            className="appearance-none justify-center items-center border-2 border-secondary-400 hover:border-secondary-200 transition-colors rounded-2xl w-[900px] py-2 px-12 text-secondary-500 leading-tight focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:shadow-outline"
             type="text"
             placeholder="Name, Catalogue, Code"
             onChange={handleSearchInputChange}

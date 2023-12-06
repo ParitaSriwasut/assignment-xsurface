@@ -29,7 +29,7 @@ export default function ProductList({ products }) {
                 <p className="text-primary-700 text-lg font-semibold cursor-auto ml-3">
                   ฿ {product.price}
                 </p>
-                <div className="ml-48">
+                <div className="ml-28">
                   <FaCircleInfo
                     className="flex text-2xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105"
                     onClick={() => {
