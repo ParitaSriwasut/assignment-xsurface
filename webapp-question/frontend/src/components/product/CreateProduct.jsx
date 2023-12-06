@@ -1,4 +1,4 @@
-import { RxUpload } from "react-icons/rx";
+import { LuUpload } from "react-icons/lu";
 
 export default function CreateProduct({
   name,
@@ -12,115 +12,117 @@ export default function CreateProduct({
   handleSubmitForm,
 }) {
   return (
-    <section className="section flex flex-col gap-12 pb-20 desktop:pt-16">
-      <div className="max-w-md mx-auto p-6 bg-primary-50 rounded-md shadow-md flex">
-        <div className="grid bg-primary-50 rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2 ">
-          <div className="flex justify-start">
-            <div className="flex">
-              <h1 className="flex items-start justify-start text-xl font-medium text-secondary-500">
-                Upload Product
-              </h1>
-            </div>
-          </div>
-          <div
-            className="grid grid-cols-1 mt-5 mx-7"
-            onSubmit={handleSubmitForm}
-          >
-            <label className="md:text-sm text-xs text-secondary-500 text-light font-semibold mb-1">
+    <section className="bg-white">
+      <div className="max-w-[1504px] h-screen items-center pt-10 p-12">
+        <div className="text-4xl font-medium text-secondary-500">
+          Upload Product
+        </div>
+        <form
+          onSubmit={handleSubmitForm}
+          className="items-center justify-center w-full max-auto pt-6 p-44"
+        >
+          <div className="pt-2">
+            <label className="mb-4 block text-lg font-semibold text-secondary-400 text-light">
               Upload image:
             </label>
-            <div className="flex items-center justify-center w-full">
-              <label className="flex flex-col border-4 border-dashed w-full h-32 hover:bg-secondary-100 hover:border-secondary-300 group" />
-              <div className="flex flex-col items-center justify-center pt-7">
-                <div className="flex justify-center py-4">
-                  <div className="flex bg-secondary-400 rounded-full md:p-4 p-2 border-2 border-secondary-200">
-                    <RxUpload className="flex items-center justify-center text-xl font-semibold text-secondary-400" />
+            <div className="mb-8">
+              <input
+                type="file"
+                className="opacity-50 absolute pt-28"
+                onChange={handleFileChange}
+                accept="image/*" // Optionally ensure only image file types are selectable
+              />
+              <label
+                htmlFor="file"
+                className="relative flex w-full items-center justify-center rounded-lg border-dashed border-2 hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center"
+              >
+                <div>
+                  <div className="flex items-center justify-center gap-20">
+                    <LuUpload className="flex items-center justify-center text-2xl font-bold text-secondary-400" />
                   </div>
-                  <input
-                    type="file"
-                    className="opacity-0 absolute"
-                    onChange={handleFileChange}
-                    accept="image/*" // Optionally ensure only image file types are selectable
-                  />
+                  <div className="flex">
+                    <p className="mb-2 block text-sm font-semibold text-secondary-300">
+                      Drag & Drop or
+                    </p>
+                    <p className="mb-2 block text-sm font-semibold text-secondary-600 underline">
+                      Choose file
+                    </p>
+                    <p className="mb-2 block text-sm font-semibold text-secondary-300">
+                      to upload
+                    </p>
+                  </div>
+                  <p className="mb-2 block text-xs font-semibold text-secondary-300">
+                    JPG. or PNG Maximum file size 50MB.
+                  </p>
                 </div>
-                <p className="mb-2 block text-sm font-semibold text-secondary-300">
-                  Drag & Drop or
-                </p>
-                <p className="mb-2 block text-sm font-semibold text-secondary-600 underline">
-                  Choose file
-                </p>
-                <p className="mb-2 block text-sm font-semibold text-secondary-300">
-                  to upload
-                </p>
-                <p className="mb-2 block text-xs font-semibold text-secondary-300">
-                  JPG. or PNG Maximum file size 50MB.
-                </p>
-              </div>
+              </label>
+              <span className="items-start text-xs text-secondary-300 text-right">
+                Image upload (0/6)
+              </span>
             </div>
           </div>
-          <span className="flex items-end text-end justify-center text-xs text-secondary-300">
-            Image upload (0/6)
-          </span>
 
-          <div className="grid grid-cols-1 mt-5 mx-7">
+          <div className="grid grid-cols-1 mt-4 mx-2">
             <label
               htmlFor="productName"
-              className="uppercase md:text-sm text-xs text-secondary-500 text-light font-semibold"
+              className=" md:text-sm text-xs text-secondary-400 text-light font-semibold"
             >
-              Product name
+              Product name:
             </label>
             <input
-              className="p-2 border rounded"
               type="text"
+              className="py-2 px-3 rounded-3xl border-2 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
               placeholder="Product name"
               value={name}
               onChange={handleNameChange}
             />
           </div>
 
-          <div className="grid grid-cols-1 mt-5 mx-7">
+          <div className="grid grid-cols-1 mt-4 mx-2">
             <label
               htmlFor="productCode"
-              className="uppercase md:text-sm text-xs text-secondary-500 text-light font-semibold"
+              className=" md:text-sm text-xs text-secondary-400 text-light font-semibold"
             >
-              Code
+              Code:
             </label>
             <input
-              className="p-2 border rounded"
               type="text"
-              placeholder="Code"
+              className="py-2 px-3 rounded-3xl border-2 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+              placeholder="Product code"
               value={code}
               onChange={handleCodeChange}
+              required
             />
           </div>
 
-          <div className="grid grid-cols-1 mt-5 mx-7">
+          <div className="grid grid-cols-1 mt-4 mx-2">
             <label
               htmlFor="productPrice"
-              className="uppercase md:text-sm text-xs text-secondary-500 text-light font-semibold"
+              className=" md:text-sm text-xs text-secondary-400 text-light font-semibold"
             >
-              Product price
+              Product price:
             </label>
             <input
-              className="p-2 border rounded"
-              type="text"
-              placeholder="Price"
+              type="number"
+              className="py-2 px-3 rounded-3xl border-2 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+              placeholder="Product price"
               value={price}
               onChange={handlePriceChange}
             />
           </div>
-        </div>
-        <div className="flex gap-5 flex-col w-full sm:w-auto sm:flex-row p-4">
-          <button className="flex flex-row items-center justify-center w-full px-4 py-4 mb-4 text-sm font-medium rounded-lg bg-primary-50 text-primary-600 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1">
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className=" text-white bg-primary-500 flex items-center justify-center w-full px-4 py-4 text-sm font-bold rounded-lg leading-6 capitalize duration-100 transform border-2 cursor-pointer border-primary-400 focus:ring-4 focus:ring-primary-500 focus:ring-opacity-50 focus:outline-none sm:w-auto sm:px-6 border-text  hover:shadow-lg hover:-translate-y-1"
-          >
-            Confirm
-          </button>
-        </div>
+
+          <div className="flex gap-10 flex-col w-full sm:w-auto sm:flex-row p-4 justify-center items-center pt-10">
+            <button className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-white text-primary-600 border-2 border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-400 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-primary-400 text-white border-2 border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1"
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
       </div>
     </section>
   );
