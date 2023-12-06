@@ -12,7 +12,7 @@ export default function ProductList({ products }) {
           {products.map((product) => (
             <div
               key={product.id}
-              className="w-62 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl mx-2 my-4" // Added mx-2 and my-4 for margin
+              className="w-68 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl mx-2 my-4" // Added mx-2 and my-4 for margin
             >
               <img
                 className="h-w-72 object-cover rounded-t-xl"
@@ -26,12 +26,12 @@ export default function ProductList({ products }) {
                 <p className="text-secondary-400 text-md font-semibold cursor-auto my-3">
                   {product.code}
                 </p>
-                <p className="text-primary-700 text-lg font-semibold cursor-auto ml-4">
+                <p className="text-primary-700 text-lg font-semibold cursor-auto ml-3">
                   ฿ {product.price}
                 </p>
                 <div className="ml-48">
                   <FaCircleInfo
-                    className="flex text-4xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105"
+                    className="flex text-2xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105"
                     onClick={() => {
                       setIsOpen(true);
                     }}
