@@ -23,15 +23,15 @@ export default function ProductList({ products }) {
                 <h3 className="text-secondary-400 text-lg font-bold truncate block capitalize">
                   {product.name}
                 </h3>
-                <p className="text-secondary-400 text-md font-semibold cursor-auto ml-3">
+                <p className="text-secondary-400 text-md font-semibold cursor-auto my-3">
                   {product.code}
                 </p>
-                <p className="text-primary-700 text-lg font-semibold cursor-auto my-3">
+                <p className="text-primary-700 text-lg font-semibold cursor-auto ml-3">
                   ฿ {product.price}
                 </p>
                 <div className="ml-56">
                   <FaCircleInfo
-                    className="flex text-xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105"
+                    className="flex text-4xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105"
                     onClick={() => {
                       setIsOpen(true);
                     }}

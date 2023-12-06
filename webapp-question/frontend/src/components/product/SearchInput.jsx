@@ -3,7 +3,7 @@ import { GrSearch } from "react-icons/gr";
 export default function SearchInput({ handleSearchInputChange, searchInput }) {
   return (
     <section className="bg-white">
-      <div className="items-center justify-center pt-4">
+      <div className="items-center justify-center pt-4 p-52">
         <div className="relative">
           <input
             className="appearance-none border-2 pl-10 border-secondary-400 hover:border-secondary-200 transition-colors rounded-2xl w-[800px] py-2 px-7 text-secondary-500 leading-tight focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:shadow-outline"
