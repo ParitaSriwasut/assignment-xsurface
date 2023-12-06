@@ -9,38 +9,38 @@ export default function ProductList({ products }) {
           <h2 className="flex justify-center text-secondary-500 text-4xl font-semibold py-10">
             Product List
           </h2>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 w-72 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-            <div className="w-72 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-              {products.map((product) => (
-                <div key={product.i}>
-                  <img
-                    className="h-80 w-72 object-cover rounded-t-xl" // Use object-contain to fit the image within the container without cropping
-                    src={product.image}
-                    alt={product.name}
-                  />
-
-                  <div className="px-4 py-3 w-72">
-                    <h3 className="text-secondary-400 text-lg font-bold truncate block capitalize">
-                      {product.name}
-                    </h3>
-                    <p className="text-primary-700 text-lg font-semibold cursor-auto my-3">
-                      ฿ {product.price}
-                    </p>
-                    <p className="text-secondary-400 text-md font-semibold cursor-auto ml-3">
-                      {product.code}
-                    </p>
-                    <div className=" ml-64">
-                      <FaCircleInfo
-                        className="flex text-xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105"
-                        onClick={() => {
-                          setIsOpen(true);
-                        }}
-                      />
-                    </div>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="w-72 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+              >
+                <img
+                  className="h-80 w-72 object-cover rounded-t-xl"
+                  src={product.image}
+                  alt={product.name}
+                />
+                <div className="px-4 py-3">
+                  <h3 className="text-secondary-400 text-lg font-bold truncate block capitalize">
+                    {product.name}
+                  </h3>
+                  <p className="text-primary-700 text-lg font-semibold cursor-auto my-3">
+                    ฿ {product.price}
+                  </p>
+                  <p className="text-secondary-400 text-md font-semibold cursor-auto ml-3">
+                    {product.code}
+                  </p>
+                  <div className="ml-64">
+                    <FaCircleInfo
+                      className="flex text-xl font-bold text-secondary-400 cursor-pointer duration-500 hover:scale-105"
+                      onClick={() => {
+                        setIsOpen(true);
+                      }}
+                    />
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
