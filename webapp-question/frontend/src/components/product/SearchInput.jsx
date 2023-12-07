@@ -17,7 +17,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
             <li>
               <button
                 type="button"
-                className="inline-flex w-full px-4 py-2.5 hover:bg-secondary-100 "
+                className="inline-flex w-full px-4 py-2 hover:bg-secondary-100 "
               >
                 Product name
               </button>
@@ -25,7 +25,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
             <li>
               <button
                 type="button"
-                className="inline-flex w-full px-4 py-2.5 hover:bg-secondary-100 "
+                className="inline-flex w-full px-4 py-2 hover:bg-secondary-100 "
               >
                 Product code
               </button>
@@ -35,15 +35,15 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
         <div className="relative w-full">
           <input
             type="search"
-            className="z-20 block w-full px-4 py-2.5 rounded-e-lg border-2 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="z-20 block w-full rounded-e-lg border-2 p-2.5 text-sm text-secondary-500 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             placeholder="Name, Code "
             required
           />
           <button
             type="submit"
-            className="absolute end-0 top-0 h-full rounded-e-lg border border-primary-500 bg-primary-500 p-2.5 font-medium text-white hover:bg-primary-400"
+            className="absolute end-0 top-0 h-full rounded-e-lg border border-primary-500 bg-primary-500 p-2.5 text-md font-bold text-white hover:bg-primary-400"
           >
-            <GrSearch className="flex text-xl font-bold text-white" />
+            <GrSearch className="flex " />
           </button>
         </div>
       </div>
