@@ -1,4 +1,5 @@
 import { LuUpload } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 export default function CreateProduct({
   name,
@@ -116,9 +117,11 @@ export default function CreateProduct({
           </div>
 
           <div className="flex gap-10 flex-col w-full sm:w-auto sm:flex-row p-4 justify-center items-center pt-10">
-            <button className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-white text-primary-600 border border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-400 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1">
-              Cancel
-            </button>
+          <Link to="/">
+              <button className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-white text-primary-600 border border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-400 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1">
+                Cancel
+              </button>
+          </Link>   
             <button
               type="submit"
               className="flex flex-row items-center justify-center w-full px-4 py-3 mb-4 text-sm font-medium rounded-3xl bg-primary-400 text-white border border-gray-100 leading-6 capitalize duration-100 transform shadow cursor-pointer focus:ring-4 focus:ring-primary-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:w-auto sm:mr-4 md:pl-8 md:pr-6 xl:pl-12 xl:pr-10 hover:shadow-lg hover:-translate-y-1"

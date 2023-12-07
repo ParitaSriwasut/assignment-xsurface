@@ -29,7 +29,6 @@ export function CreateProductContainer() {
     if (file && file.type.startsWith('image/')) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        // Update the state with this result
         setPreviewSrc(reader.result);
       };
       reader.readAsDataURL(file);

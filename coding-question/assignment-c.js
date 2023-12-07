@@ -31,20 +31,29 @@ const input = [
 ];
 
 function sortedAge(input) {
-  const result = [];
+  const filteredInput = [];
 
   for (let i = 0; i < input.length; i++) {
     if (input[i].age <= 30 && input[i].age % 3 == 0) {
-      result.push(input[i]);
+      filteredInput.push(input[i]);
     }
   }
-  //comparing the age if a-b if result is negative push a first
-  result.sort((a, b) => a.age - b.age);
+  
+  // Normally sort takes O(n log n) time, but since we know the range of the numbers, we can use a counting sort to do it in O(n) time using counting sort.
+  const nameListByAge = filteredInput.reduce((acc, item) => {
+    acc[item.age] = acc[item.age] || [];
+    acc[item.age].push(item.name)
+    return acc;
+  }, {});
 
-  //mapping to get the name
-  const namesList = result.map((item) => item.name);
+  const result = [];
+  for (let i = 0; i <= 30; i=i+3) {
+    if (nameListByAge[i]) {
+      result.push(...nameListByAge[i]);
+    }
+  }
 
-  return namesList;
+  return result;
 }
 
 console.log(sortedAge(input));

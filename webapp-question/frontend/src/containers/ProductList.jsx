@@ -14,7 +14,7 @@ export function ProductListContainer() {
     async function fetchProducts() {
       try {
         const response = await axios.get(
-          `${config.backendUrl}/products?name=${searchInput}`
+          `${config.backendUrl}/products?searchText=${searchInput}`
         );
         if (!response.status === 200) {
           throw new Error("Network response was not 200");
