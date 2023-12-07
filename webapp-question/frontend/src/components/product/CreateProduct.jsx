@@ -18,14 +18,14 @@ export default function CreateProduct({
           onSubmit={handleSubmitForm}
           className="items-center justify-center w-full max-auto pt-6 p-44"
         >
-          <div className="text-4xl font-medium items-start justify-start text-secondary-500">
+          <div className="text-4xl font-medium items-start justify-start text-secondary-500 mb-4">
             Upload Product
           </div>
           <label
             htmlFor="text"
             className=" md:text-sm text-sm text-secondary-400 text-light font-semibold"
           >
-            Upload Product
+            Upload image
           </label>
           <div className="pt-2">
             <label className="flex flex-col border-4 border-dashed w-full-[300px] h-60 rounded-lg hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center group">

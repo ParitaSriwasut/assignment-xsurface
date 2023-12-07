@@ -4,7 +4,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 export default function SearchInput({ handleSearchInputChange, searchInput }) {
   return (
     <form>
-      <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 2xl:w-1536 mx-auto flex items-center justify-center pt-16 p-12">
+      <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 2xl:w-1536 mx-auto flex items-center justify-center pt-16 p-12 relative">
         <button
           className="z-10 inline-flex flex-shrink-0 items-center rounded-s-lg border border-secondary-100 bg-white px-4 py-2.5 text-center text-sm font-medium text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-400"
           type="button"
@@ -12,12 +12,12 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
           Search by
           <RiArrowDropDownLine className="text-secondary-500 flex text-2xl font-bold" />
         </button>
-        <div className="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow">
+        <div className="absolute left-0 mt-2 w-44 divide-y divide-gray-100 rounded-lg bg-white shadow z-20">
           <ul className="py-2 text-sm text-secondary-500">
             <li>
               <button
                 type="button"
-                className="inline-flex w-full px-4 py-2 hover:bg-secondary-100 "
+                className="inline-flex w-full px-4 py-2 hover:bg-secondary-100"
               >
                 Product name
               </button>
@@ -25,7 +25,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
             <li>
               <button
                 type="button"
-                className="inline-flex w-full px-4 py-2 hover:bg-secondary-100 "
+                className="inline-flex w-full px-4 py-2 hover:bg-secondary-100"
               >
                 Product code
               </button>
@@ -36,7 +36,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
           <input
             type="search"
             className="z-20 block w-full px-4 py-2.5 rounded-e-lg border-2 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-            placeholder="Name, Catalogue, Code "
+            placeholder="Name, Catalogue, Code"
             required
           />
           <button
@@ -49,19 +49,4 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
       </div>
     </form>
   );
-}
-
-{
-  /* <div className="sm:w-640 md:w-768 lg:w-1024 xl:-1280 mx-auto flex items-center justify-center pt-6">
-<div className="left-3 inset-y-0 flex items-center">
-  <GrSearch className="flex text-2xl font-bold text-secondary-400" />
-</div>
-<input
-  className="appearance-none border-2 border-secondary-400 hover:border-secondary-200 transition-colors rounded-2xl w-[800px] py-2 pl-10 pr-4 text-secondary-500 leading-tight focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:shadow-outline"
-  type="text"
-  placeholder="Name, Catalogue, Code"
-  onChange={handleSearchInputChange}
-  value={searchInput}
-/>
-</div> */
 }
