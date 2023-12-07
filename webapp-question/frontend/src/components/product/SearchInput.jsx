@@ -1,4 +1,5 @@
 import { GrSearch } from "react-icons/gr";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 export default function SearchInput({ handleSearchInputChange, searchInput }) {
   return (
