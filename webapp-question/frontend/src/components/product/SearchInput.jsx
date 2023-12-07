@@ -11,7 +11,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
           <input
             className="appearance-none border-2 border-secondary-400 hover:border-secondary-200 transition-colors rounded-2xl w-[700px] py-2 pl-10 pr-4 text-secondary-500 leading-tight focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:shadow-outline"
             type="text"
-            placeholder="Name, Catalogue, Code"
+            placeholder="Search by Product name, Product code"
             onChange={handleSearchInputChange}
             value={searchInput}
           />

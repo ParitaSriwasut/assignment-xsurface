@@ -23,7 +23,7 @@ export default function CreateProduct({
           </div>
           <label
             htmlFor="text"
-            className=" md:text-sm text-sm text-secondary-400 text-light font-semibold"
+            className="md:text-sm text-sm text-secondary-400 text-light font-semibold mt-4"
           >
             Upload image
           </label>
