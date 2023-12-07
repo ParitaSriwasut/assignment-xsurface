@@ -28,7 +28,7 @@ export default function CreateProduct({
             Upload Product
           </label>
           <div className="pt-2">
-            <label className="flex flex-col border-4 border-dashed w-full-[600px] h-60 rounded-lg hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center group">
+            <label className="flex flex-col border-4 border-dashed w-full-[300px] h-60 rounded-lg hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center group">
               <div className="flex flex-col justify-center items-center px-20">
                 {previewSrc ? (
                   <img src={previewSrc} alt="Preview" className="max-h-32" />
