@@ -18,7 +18,7 @@ export default function CreateProduct({
           onSubmit={handleSubmitForm}
           className="items-center justify-center w-full max-auto pt-6 p-44"
         >
-          <div className="text-4xl font-medium items-start justify-start text-secondary-500 mt-4">
+          <div className="flex text-4xl font-medium items-start justify-start text-secondary-500 mt-6 gap-4">
             Upload Product
           </div>
           <label
