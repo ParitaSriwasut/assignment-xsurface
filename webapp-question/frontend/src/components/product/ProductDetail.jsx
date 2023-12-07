@@ -6,7 +6,7 @@ export default function ProductDetail({ product }) {
 
   return (
     <Modal onClose={() => setIsOpen(false)}>
-      <div className="mx-auto mt-20 inset-0 z-60">
+      <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 mx-auto flex items-center justify-center pt-6 mt-20 inset-0 z-60">
         {/* Assuming product is an array and you want to map over it */}
         {product.map((item) => (
           <div

@@ -13,7 +13,7 @@ export default function CreateProduct({
 }) {
   return (
     <section className="bg-white">
-      <div className="max-w-[1504px] h-screen items-center pt-10 p-12">
+      <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 mx-auto flex justify-center pt-6 max-w-[1504px] h-screen items-center p-12">
         <div className="text-4xl font-medium text-secondary-500">
           Upload Product
         </div>
