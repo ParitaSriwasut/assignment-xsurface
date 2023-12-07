@@ -6,7 +6,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
     <form>
       <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 2xl:w-1536 mx-auto flex items-center justify-center pt-16 p-12">
         <button
-          className="z-10 inline-flex flex-shrink-0 items-center rounded-s-lg border border-secondary-100 bg-white px-4 py-2.5 text-center text-sm font-medium text-secondary-500 hover:bg-secondary-200 focus:outline-none focus:ring-4 focus:ring-primary-400"
+          className="z-10 inline-flex flex-shrink-0 items-center rounded-s-lg border border-secondary-100 bg-white px-4 py-2.5 text-center text-sm font-medium text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-primary-400"
           type="button"
         >
           Search by
@@ -35,15 +35,15 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
         <div className="relative w-full">
           <input
             type="search"
-            className="z-20 block w-full rounded-e-lg border border-s-2 border-secondary-100 bg-white p-2.5 text-sm text-secondary-500 focus:border-secondary-300 focus:ring-primary-500"
+            className="z-20 block w-full rounded-e-lg border-2 border-secondary-100 bg-white p-2.5 text-sm text-secondary-500 focus:border-primary-500 focus:ring-primary-500"
             placeholder="Name, Catalogue, Code "
             required
           />
           <button
             type="submit"
-            className="absolute end-0 top-0 h-full rounded-e-lg border border-primary-500 bg-primary-600 p-2.5 text-sm font-medium text-white hover:bg-primary-300 focus:outline-none focus:ring-4 focus:ring-primary-300"
+            className="absolute end-0 top-0 h-full rounded-e-lg border border-primary-500 bg-primary-500 p-2.5 text-sm font-medium text-white hover:bg-primary-400"
           >
-            <GrSearch className="flex text-2xl font-bold text-secondary-400" />
+            <GrSearch className="flex text-2xl font-bold text-white" />
           </button>
         </div>
       </div>
