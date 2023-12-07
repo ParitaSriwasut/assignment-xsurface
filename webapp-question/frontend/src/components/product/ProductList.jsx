@@ -86,7 +86,7 @@ export default function ProductList({ products }) {
               className="w-70 h-70 bg-white shadow-lg rounded-xl duration-500 hover:scale-105 hover:shadow-xl mx-2 my-4"
             >
               <img
-                className="h-56 w-74 object-cover rounded-t-xl"
+                className="h-56 w-full object-cover rounded-t-xl"
                 src={product.image}
                 alt={product.name}
                 onClick={() => openModal(product.name, product.code)}
