@@ -13,22 +13,22 @@ export default function CreateProduct({
 }) {
   return (
     <section className="bg-white">
-      <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 2xl:w-1536 mx-auto flex justify-center items-center h-screen pt-10 p-12">
-        <div className="text-4xl font-medium text-secondary-500">
-          Upload Product
-        </div>
+      <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 2xl:w-1536 mx-auto flex justify-center h-screen items-center pt-24 p-12">
         <form
           onSubmit={handleSubmitForm}
           className="items-center justify-center w-full max-auto pt-6 p-44"
         >
+          <div className="text-4xl font-medium items-start justify-start text-secondary-500 mt-4">
+            Upload Product
+          </div>
           <label
             htmlFor="text"
             className=" md:text-sm text-sm text-secondary-400 text-light font-semibold"
           >
-            Upload Product
+            Upload image
           </label>
           <div className="pt-2">
-            <label className="flex flex-col border-4 border-dashed w-full-[600px] h-60 rounded-lg hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center group">
+            <label className="flex flex-col border-4 border-dashed w-full-[300px] h-60 rounded-lg hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center group">
               <div className="flex flex-col justify-center items-center px-20">
                 {previewSrc ? (
                   <img src={previewSrc} alt="Preview" className="max-h-32" />
