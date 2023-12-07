@@ -4,7 +4,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 export default function SearchInput({ handleSearchInputChange, searchInput }) {
   return (
     <form>
-      <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 2xl:w-1536 pt-16 p-12 mx-auto flex items-center justify-center">
+      <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 2xl:w-1536 pt-16 px-12 mx-auto flex items-center justify-center">
         <button
           className="z-10 inline-flex flex-shrink-0 items-center rounded-s-lg border border-secondary-100 bg-white px-4 py-2.5 text-center text-sm font-medium text-secondary-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-400"
           type="button"
@@ -12,7 +12,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
           Search by
           <RiArrowDropDownLine className="text-secondary-500 flex text-2xl font-bold" />
         </button>
-        <div className="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow">
+        <div className="z-10 w-44 divide-y divide-gray-100 rounded-lg bg-white shadow">
           <ul className="py-2 text-sm text-secondary-500">
             <li>
               <button
