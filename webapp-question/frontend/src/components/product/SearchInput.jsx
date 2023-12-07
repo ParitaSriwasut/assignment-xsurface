@@ -3,7 +3,7 @@ import { GrSearch } from "react-icons/gr";
 export default function SearchInput({ handleSearchInputChange, searchInput }) {
   return (
     <section className="bg-white">
-      <div className="flex items-center justify-center pt-6 px-12 mx-auto">
+      <div className="flex items-center justify-center pt-6 px-12 mx-auto sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
         <div className="relative flex items-center">
           <div className="absolute left-3 inset-y-0 flex items-center">
             <GrSearch className="flex text-2xl font-bold text-secondary-400" />
