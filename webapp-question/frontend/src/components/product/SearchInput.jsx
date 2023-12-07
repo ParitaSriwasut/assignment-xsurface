@@ -35,7 +35,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
         <div className="relative w-full">
           <input
             type="search"
-            className="z-20 block w-full rounded-e-lg border-2 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="z-20 block w-full px-4 py-2.5 rounded-e-lg border-2 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             placeholder="Name, Catalogue, Code "
             required
           />
