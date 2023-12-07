@@ -18,7 +18,7 @@ export default function CreateProduct({
           onSubmit={handleSubmitForm}
           className="items-center justify-center w-full max-auto pt-6 p-44"
         >
-          <div className="flex text-4xl font-medium items-start justify-start text-secondary-500 mt-6 gap-4">
+          <div className="flex text-4xl font-medium items-start justify-start text-secondary-500 mt-8 gap-4">
             Upload Product
           </div>
           <label
@@ -31,7 +31,11 @@ export default function CreateProduct({
             <label className="flex flex-col border-4 border-dashed w-full-[300px] h-60 rounded-lg hover:border-primary-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md border-secondary-300 p-20 text-center group">
               <div className="flex flex-col justify-center items-center px-20">
                 {previewSrc ? (
-                  <img src={previewSrc} alt="Preview" className="max-h-32" />
+                  <img
+                    src={previewSrc}
+                    alt="Preview"
+                    className="max-w-40 items-center justify-center"
+                  />
                 ) : (
                   <>
                     <LuUpload className="flex items-center justify-center text-2xl font-bold text-secondary-400" />
