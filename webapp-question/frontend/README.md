@@ -1,5 +1,29 @@
 # React + Vite
 
+# Frontend
+
+## Setup
+
+### This project uses pnpm
+
+```
+npm install -g pnpm
+```
+
+## Running the code
+
+### Install dependencies
+
+```
+pnpm i
+```
+
+### Run the server
+
+```
+pnpm dev
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
