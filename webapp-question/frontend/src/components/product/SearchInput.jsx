@@ -4,7 +4,7 @@ export default function SearchInput({ handleSearchInputChange, searchInput }) {
   return (
     <div className="bg-white">
       <div className="sm:w-640 md:w-768 lg:w-1024 xl:w-1280 2xl:w-1536 mx-auto flex items-center justify-center pt-6 px-12 ">
-        <div className="left-3 inset-y-0 flex justify-center items-center">
+        <div className="left-3 inset-y-0 flex items-center">
           <GrSearch className="flex text-2xl font-bold text-secondary-400" />
         </div>
         <input
