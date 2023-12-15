@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 const productSchema = new Schema({
@@ -10,4 +10,4 @@ const productSchema = new Schema({
   updatedAt: Date,
 });
 
-export const Product = model('Product', productSchema);
+export const Product = model("Product", productSchema);

@@ -7,7 +7,9 @@ const input = ["B", "J", "D", "I", "G", "A"];
 
 function mapOutput() {
   for (let i = 0; i < input.length; i++) {
-    console.log(`This is ${input[i]}, It correctly outputs from question C.`);
+    console.log(
+      `\u2022 This is ${input[i]}, It correctly outputs from question C.`
+    );
   }
 }
 mapOutput();

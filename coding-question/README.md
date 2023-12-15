@@ -33,10 +33,10 @@ node assignment-c.js
 
 ```sh
 node assignment-d.js
-This is B, It correctly outputs from question C.
-This is J, It correctly outputs from question C.
-This is D, It correctly outputs from question C.
-This is I, It correctly outputs from question C.
-This is G, It correctly outputs from question C.
-This is A, It correctly outputs from question C.
+• This is B, It correctly outputs from question C.
+• This is J, It correctly outputs from question C.
+• This is D, It correctly outputs from question C.
+• This is I, It correctly outputs from question C.
+• This is G, It correctly outputs from question C.
+• This is A, It correctly outputs from question C.
 ```
