@@ -63,6 +63,7 @@ export default function CreateProduct({
                 className="opacity-0 absolute"
                 onChange={handleFileChange}
                 accept="image/*"
+                required
               />
             </label>
             <div>
@@ -85,6 +86,7 @@ export default function CreateProduct({
               placeholder="Product name"
               value={name}
               onChange={handleNameChange}
+              required
             />
           </div>
 
@@ -112,12 +114,14 @@ export default function CreateProduct({
             >
               Product price
             </label>
+
             <input
               type="number"
               className="h-[50px] p-4 rounded-3xl border-2 border-secondary-100 mt-1 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
               placeholder="Product price"
               value={price}
               onChange={handlePriceChange}
+              required
             />
           </div>
 

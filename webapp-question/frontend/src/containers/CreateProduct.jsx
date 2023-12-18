@@ -26,7 +26,14 @@ export function CreateProductContainer() {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file && file.type.startsWith('image/')) {
+
+    if (file.size > 50 * 1024 * 1024) {
+      console.log(
+        "To upload images : The image size should not over than 50MB."
+      );
+    }
+
+    if (file && file.type.startsWith("image/")) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreviewSrc(reader.result);
@@ -46,16 +53,20 @@ export function CreateProductContainer() {
     formData.append("price", price);
 
     try {
-      const response = await axios.post(`${config.backendUrl}/products`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post(
+        `${config.backendUrl}/products`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       if (!response.status === 200) {
         throw new Error("Network response was not 200");
       }
-      response.data.product
+      response.data.product;
 
       // Clear the form or reset state
       setName("");
@@ -70,14 +81,13 @@ export function CreateProductContainer() {
       console.error("Error creating product:", err.message);
     }
   };
-
+  // Render the CreateProduct component with props and event handlers
   return (
     <CreateProduct
       name={name}
       code={code}
       price={price}
       previewSrc={previewSrc}
-
       handleNameChange={handleNameChange}
       handleCodeChange={handleCodeChange}
       handlePriceChange={handlePriceChange}

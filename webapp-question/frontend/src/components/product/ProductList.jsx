@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function ProductList({ products }) {
   return (
@@ -15,7 +15,6 @@ export default function ProductList({ products }) {
           </Link>
         </div>
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8">
-
           {products.map((product) => (
             <div
               key={product.id}
